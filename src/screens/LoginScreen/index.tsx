@@ -16,7 +16,6 @@ export function LoginScreen() {
     setIsLoading(true);
     UserService.login({username: username, password: password})
       .then(r => {
-        console.log(r.token);
         return AsyncStorage.setItem('token', r.token);
       })
       .then(() => {
